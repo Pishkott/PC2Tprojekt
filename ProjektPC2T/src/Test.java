@@ -66,7 +66,7 @@ public class Test {
 					{	
 						info=novaDatabaze.getKniha(idx);
 						if (info instanceof Roman) {
-							System.out.println("Nazev: " + info.getNazev() + " autor: " + info.getAutor() + " rok vydani: " + info.getRok() + "typ: " + info.getTyp()+" dostupnost: " + info.isDostupnost()+" zanr: " );
+							System.out.println("Nazev: " + info.getNazev() + " autor: " + info.getAutor() + " rok vydani: " + info.getRok() + "typ: " + info.getTyp()+" dostupnost: " + info.isDostupnost()+" zanr: "+ ((Roman) info).getZanr());
 						}
 					}
 					catch(ArrayIndexOutOfBoundsException e)
