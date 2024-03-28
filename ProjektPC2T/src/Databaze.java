@@ -1,6 +1,12 @@
 import java.util.Scanner;
 
 public class Databaze {
+	
+	private Scanner sc;
+	private Kniha [] prvkyDatabaze;
+	private Kniha [] pomocnePole;
+	
+	
 	public Databaze(int pocetPrvku)
 	{
 		prvkyDatabaze=new Kniha[pocetPrvku];
@@ -24,14 +30,26 @@ public class Databaze {
 				String typ = "Román";
 				System.out.println("Zadejte zanr knihy");
 				String zanr=sc.next();
-				prvkyDatabaze[posledniKniha++]=new Roman(nazev,autor,rok,typ,true,zanr);
+				pomocnePole = new Kniha[prvkyDatabaze.length +1];
+				for (int i = 0; i<prvkyDatabaze.length; i++) {
+					pomocnePole[i] = prvkyDatabaze[i];
+				}
+				pomocnePole[prvkyDatabaze.length] = new Roman(nazev,autor,rok,typ,true,zanr);
+				prvkyDatabaze = new Kniha[pomocnePole.length];
+				prvkyDatabaze = pomocnePole;
 				break;
-			case 2:
+/*			case 2:
 				typ = "Učebnice";
 				System.out.println("Zadejte, pro jaky rocnik je urcena");
 				int rocnik=Test.pouzeCelaCisla(sc);
-				prvkyDatabaze[posledniKniha++]=new Ucebnice(nazev,autor,rok,typ,true,rocnik);
+				pomocnePole = new Kniha[prvkyDatabaze.length +1];
+				for (int i = 0; i<prvkyDatabaze.length; i++) {
+					pomocnePole[i] = prvkyDatabaze[i];
 				}
+				prvkyDatabaze = new Kniha[pomocnePole.length];
+				prvkyDatabaze = pomocnePole;
+				break;*/
+			}
 		//System.out.println("Je kniha dostupna? (A/N)");	
 	}
 	
@@ -39,9 +57,4 @@ public class Databaze {
 	{
 		return prvkyDatabaze[idx];
 	}
-	
-	
-	private Scanner sc;
-	private Kniha [] prvkyDatabaze;
-	private int posledniKniha;
 }

@@ -7,5 +7,13 @@ public class Ucebnice extends Kniha{
 		// TODO Auto-generated constructor stub
 		this.rocnik = rocnik;
 	}
+
+	public int getRocnik() {
+		return rocnik;
+	}
+
+	public void setRocnik(int rocnik) {
+		this.rocnik = rocnik;
+	}
 	
 }

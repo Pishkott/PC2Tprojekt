@@ -24,7 +24,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		boolean run = true;
 		Scanner sc = new Scanner(System.in);
-		Databaze novaDatabaze = new Databaze(1);
+		Databaze novaDatabaze = new Databaze(0);
 		int idx;
 		while(run==true){
 			
@@ -67,6 +67,9 @@ public class Test {
 						info=novaDatabaze.getKniha(idx);
 						if (info instanceof Roman) {
 							System.out.println("Nazev: " + info.getNazev() + " autor: " + info.getAutor() + " rok vydani: " + info.getRok() + "typ: " + info.getTyp()+" dostupnost: " + info.isDostupnost()+" zanr: "+ ((Roman) info).getZanr());
+						}
+						else {
+							System.out.println("Nazev: " + info.getNazev() + " autor: " + info.getAutor() + " rok vydani: " + info.getRok() + "typ: " + info.getTyp()+" dostupnost: " + info.isDostupnost()+" rocnik: "+ ((Ucebnice) info).getRocnik());
 						}
 					}
 					catch(ArrayIndexOutOfBoundsException e)
